@@ -18,12 +18,13 @@ public class EquipoServicio {
     
     public void estadisticaPartido(Equipo equipo1, Equipo equipo2, Integer golesEquipo1, Integer golesEquipo2) {
 
-        equipo1.setGolesContra(--golesEquipo2);
+        equipo1.setGolesContra(++golesEquipo2); // Los goles en contra se deben sumar, luego restaremos en el método
         equipo1.setGolesFavor(++golesEquipo1);
         equipo2.setGolesFavor(++golesEquipo2);
-        equipo2.setGolesContra(--golesEquipo1);
+        equipo2.setGolesContra(++golesEquipo1);
         
-//        equipo1.setDiferenciaGoles(equipo1.getGolesFavor()-equipo1.getGolesContra());
+        //QUIZÁS CONVENGA ELIMINAR ESTE DATO Y LUEGO UTILIZAR LA DIF DE GOLES DIRECTAMENTE EN EL MÉTODO O
+//        equipo1.setDiferenciaGoles(equipo1.getGolesFavor()-equipo1.getGolesContra()); 
 //        equipo2.setDiferenciaGoles(equipo2.getGolesFavor()-equipo2.getGolesContra());
 //        
         
