@@ -27,10 +27,6 @@ public class PortalControlador {
 //		return "registro.html";
 //	}
 //	
-//            	@GetMapping("/fixture")
-//	public String fixture() {
-//		
-//		return "fixture.html";
-//	}
+
 	
 }

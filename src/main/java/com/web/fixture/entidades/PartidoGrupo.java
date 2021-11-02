@@ -31,7 +31,7 @@ public class PartidoGrupo {
 
     private Integer golesEquipo2;
 
-    private String grupo;
+    private String grupo; // Es necesario este dato??
 
     /**
      * @return the idPartido
