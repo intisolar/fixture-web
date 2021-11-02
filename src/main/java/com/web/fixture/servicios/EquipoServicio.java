@@ -23,7 +23,7 @@ public class EquipoServicio {
         equipo2.setGolesFavor(++golesEquipo2);
         equipo2.setGolesContra(++golesEquipo1);
         
-        //QUIZÁS CONVENGA ELIMINAR ESTE DATO Y LUEGO UTILIZAR LA DIF DE GOLES DIRECTAMENTE EN EL MÉTODO O
+        //QUIZÁS CONVENGA ELIMINAR ESTE DATO Y LUEGO UTILIZAR LA DIF DE GOLES DIRECTAMENTE EN EL MÉTODO OCTAVOS
 //        equipo1.setDiferenciaGoles(equipo1.getGolesFavor()-equipo1.getGolesContra()); 
 //        equipo2.setDiferenciaGoles(equipo2.getGolesFavor()-equipo2.getGolesContra());
 //        
