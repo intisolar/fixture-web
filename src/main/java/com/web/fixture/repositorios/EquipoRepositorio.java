@@ -17,4 +17,6 @@ public interface EquipoRepositorio  extends JpaRepository<Equipo, Integer>{
     @Query("SELECT c.id FROM Equipo c WHERE c.fase = 'ganador' ") //Chequear esta QUERY CUANDO TENGAMOS LAS VISTAS O CARGADA LA BD
     public Integer getIdGanador();
     
+//        @Query("SELECT * FROM Equipo c WHERE c.fase = :fase")
+//    public ArrayList<Equipo> buscarPorFase(@Param("fase") String grupo);
 }
