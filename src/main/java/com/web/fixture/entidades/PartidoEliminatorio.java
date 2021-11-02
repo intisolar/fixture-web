@@ -26,7 +26,7 @@ public class PartidoEliminatorio {
     @ManyToOne
     private Equipo equipo2;
 
-    // dijimos que la fecha sería una buena id así que lo cambié y comenté el idPartido
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
