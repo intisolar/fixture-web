@@ -32,7 +32,7 @@ public class EquipoServicio {
         equipoRep.save(equipo2);
 
         
-        
+      
         
     }
 
