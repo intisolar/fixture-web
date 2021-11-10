@@ -16,6 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class PartidoEliminatorio {
 
+    //saque el generate value para ver si era el error
     @Id
     @GeneratedValue
     private Integer idPartido;
@@ -27,7 +28,7 @@ public class PartidoEliminatorio {
     private Equipo equipo2;
 
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date fecha;
 
     private Integer golesEquipo1;

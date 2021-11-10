@@ -17,7 +17,7 @@ public class Equipo {
 
     private String pais;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date baja;
 
     private Integer puntaje;
