@@ -1,6 +1,7 @@
 package com.web.fixture.entidades;
 
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,13 +24,13 @@ public class Usuario {
 
     private String email;
     private String clave;
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date alta;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date baja;
-    
-    @OneToOne
+    //prueba quitar anotacion
+    @OneToOne(cascade = {CascadeType.ALL})
     private Fixture fixture;
    
     @OneToOne

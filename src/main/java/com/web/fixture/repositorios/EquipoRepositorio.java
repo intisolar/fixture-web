@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface EquipoRepositorio  extends JpaRepository<Equipo, Integer>{
    
     
-    @Query("SELECT * FROM Equipo c WHERE c.grupo = :grupo ORDER BY c.puntaje DESC, c.golesFavor DESC")
+    @Query("SELECT c FROM Equipo c WHERE c.grupo = :grupo ORDER BY c.puntaje DESC, c.golesFavor DESC")
     public ArrayList<Equipo> buscarPorGrupo(@Param("grupo") String grupo);
     
     //esta query estaba mal 
@@ -23,6 +23,6 @@ public interface EquipoRepositorio  extends JpaRepository<Equipo, Integer>{
     @Query("SELECT c.id FROM Equipo c WHERE c.fase = 'ganador' ") //Chequear esta QUERY CUANDO TENGAMOS LAS VISTAS O CARGADA LA BD
     public Integer getIdGanador();
     
-        @Query("SELECT * FROM Equipo c WHERE c.fase = :fase")
-    public ArrayList<Equipo> buscarPorFase(@Param("fase") String grupo);
+        @Query("SELECT c FROM Equipo c WHERE c.fase = :fase")
+    public ArrayList<Equipo> buscarPorFase(@Param("fase") String fase);
 }
