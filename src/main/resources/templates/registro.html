@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -31,24 +31,27 @@
     <main>
         <div class="Container-Register">
         <div class="Register-Form">
-    <form action ="ruta del método que va a manejar la información" method="POST" enctype="multipart/form-data" class="Register-Form-F">
+    <form action ="/registrar" method="POST" enctype="multipart/form-data" class="Register-Form-F">
+        
+        <p th:if="${error != null}" th:text="${error}"></p>
+        
         <label for="nombre" class="Register-P">Nombre</label> <br> 
-        <input type="text" id="nombre" name="nombre" class="Register-I"> <br>            
-        <label for="apellido"class="Register-P">Apellido</label> <br>  
-        <input type="text" id="apellido" name="apellido" class="Register-I"> <br>
-        <label for="contraseña"class="Register-P">Contraseña</label> <br> 
-        <input type="password" id="contraseña" name="contraseña" class="Register-I"> <br>    
-        <label for="confirma"class="Register-P">Confirmar contraseña</label> <br> 
-        <input type="password" id="confirma" name="confirma contraseña" class="Register-I"> <br>
-        <label for="mail"class="Register-P">Mail</label> <br>
-        <input type="email" id="mail" name="email" class="Register-I"> <br> 
+        <input type="text" id="nombre" name="nombre" class="Register-I" th:value="${nombre}"> <br>            
+        <label for="apellido" class="Register-P">Apellido</label> <br>  
+        <input type="text" id="apellido" name="apellido" class="Register-I"th:value="${apellido}"> <br>
+        <label for="contraseña" class="Register-P">Contraseña</label> <br> 
+        <input type="password" id="contraseña" name="clave1" class="Register-I"th:value="${clave1}"> <br>    
+        <label for="confirma" class="Register-P">Confirmar contraseña</label> <br> 
+        <input type="password" id="confirma" name="clave2" class="Register-I" th:value="${clave2}"> <br>
+        <label for="mail" class="Register-P">Mail</label> <br>
+        <input type="email" id="mail" name="mail" class="Register-I" th:value="${mail}"> <br> 
 
         <label class="Register-P">Subí tu foto</label> <br>
         <input type="file" name="archivo" class="Register-I"> <br> 
         
         
-        <button type="submit"class="Register-B">Enviar</button>                           
-        <button type="reset"class="Register-B">Borrar</button>
+        <button type="submit" class="Register-B">Enviar</button>                           
+        <button type="reset" class="Register-B">Borrar</button>
     </div>
 
     <div><img src="" alt=""></div>

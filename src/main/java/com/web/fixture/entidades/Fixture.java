@@ -1,6 +1,7 @@
 package com.web.fixture.entidades;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,15 +19,11 @@ public class Fixture {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
-    
-    private String idUsuario;
-    
     @OneToMany
-    @OrderColumn
+    (cascade = {CascadeType.ALL})
     private List<PartidoGrupo> listaPartidosGrupos;
-    @OneToMany
-    @OrderColumn
+   @OneToMany
+   (cascade = {CascadeType.ALL})
     private List<PartidoEliminatorio> listaPartidosEliminatorio;
     
     //Faltan listas de partidos de fase eliminatoria y faltaría elegir un ganador.
@@ -34,6 +31,16 @@ public class Fixture {
     @OneToOne
     private Equipo ganador;
 
+
+
+
+
+
+
+
+
+
+// metodos
     /**
      * @return the id
      */
@@ -48,19 +55,6 @@ public class Fixture {
         this.id = id;
     }
 
-    /**
-     * @return the idUsuario
-     */
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    /**
-     * @param idUsuario the idUsuario to set
-     */
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     /**
      * @return the listaPartidosGrupos
@@ -106,7 +100,7 @@ public class Fixture {
 
     @Override
     public String toString() {
-        return "Fixture{" + "id=" + id + ", idUsuario=" + idUsuario + ", listaPartidosGrupos=" + listaPartidosGrupos + ", listaPartidosEliminatorio=" + listaPartidosEliminatorio + ", ganador=" + ganador + '}';
+        return "Fixture{" + "id=" + id + ", listaPartidosGrupos=" + listaPartidosGrupos + ", listaPartidosEliminatorio=" + listaPartidosEliminatorio + ", ganador=" + ganador + '}';
     }
 
     

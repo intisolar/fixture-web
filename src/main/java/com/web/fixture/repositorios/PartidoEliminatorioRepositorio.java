@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PartidoEliminatorioRepositorio extends JpaRepository<PartidoEliminatorio, Integer>{
         
-    @Query("SELECT * FROM PartidoEliminatorio c WHERE c.fase = :fase ORDER BY c.id_partido asc")
-    public ArrayList<PartidoEliminatorio> buscarPartidosxFase(@Param("fase") String grupo);
+    @Query("SELECT c FROM PartidoEliminatorio c WHERE c.fase = :fase ORDER BY c.idPartido asc")
+    public ArrayList<PartidoEliminatorio> buscarPartidosxFase(@Param("fase") String fase);
+   
 }

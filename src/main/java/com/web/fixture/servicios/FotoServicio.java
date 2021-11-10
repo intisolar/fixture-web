@@ -31,8 +31,11 @@ public class FotoServicio {
 
                 return fotoRep.save(foto);
             } catch (Exception e) {
-                
+                System.out.println("////////////////////////");
+                System.out.println("////////////////////////");
                 System.err.print(e.getMessage());
+                System.out.println("////////////////////////");
+                System.out.println("////////////////////////");
             }
         }
         return null;
