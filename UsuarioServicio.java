@@ -46,7 +46,7 @@ public class UsuarioServicio implements UserDetailsService {
     public void registrar(MultipartFile archivo, String nombre, String apellido, String email, String clave, String clave2) throws ErrorServicio {
 
         validar(nombre, apellido, email, clave, clave2);
-
+        System.out.println("datos validados");
         Usuario usuario = new Usuario(); //Creamos un objeto usuario
         usuario.setNombre(nombre); // lo llenamos con los datos que nos llega del registro web
         usuario.setApellido(apellido);
@@ -54,26 +54,29 @@ public class UsuarioServicio implements UserDetailsService {
 
         String encriptada = new BCryptPasswordEncoder().encode(clave);
         usuario.setClave(encriptada);
-
+        System.out.println("clave guardada!!!");
         usuario.setAlta(new Date()); 
 
-        Foto foto = fotoServicio.guardar(archivo);
-        usuario.setFoto(foto);
-       
-        
-        //creo y seteo el fixture en usuario y en fixture servicio tmb le enlazo el usuario y queda completa la relacion fixture/usuario
+        /* Foto foto = fotoServicio.guardar(archivo);
+        usuario.setFoto(foto);*/
 
-        
-        usuarioRepositorio.save(usuario); //Le decimos al repositorio que lo guarde en la base de datos. El repositorio es el encargado de transformar ese objeto en una o más tablas de la base de datos
+        //creo y seteo el fixture en usuario y en fixture servicio tmb le enlazo el usuario y queda completa la relacion fixture/usuario
+ 
+       // usuarioRepositorio.save(usuario); //Le decimos al repositorio que lo guarde en la base de datos. El repositorio es el encargado de transformar ese objeto en una o más tablas de la base de datos
     
-        usuario.setFixture(fixtureServicio.creaFixture(usuario.getIdUsuario()));
+        usuario.setFixture(fixtureServicio.creaFixture());
+        System.out.println("fixture creado");
+   /**/ System.out.println(usuario.getFixture().toString());
+        usuarioRepositorio.save(usuario);
     }
                
     @Transactional
     public void modificar(MultipartFile archivo, String idUsuario, String nombre, String apellido, String email, String clave1, String clave2, String zona) throws ErrorServicio {
 
         validar(nombre, apellido, email, clave1, clave2);
+        
         Optional<Usuario> respuesta = usuarioRepositorio.findById(idUsuario); //mediante la clase Optional nos fijamos si con el id devuelve un usuario
+        
         if (respuesta.isPresent()) { //si respuesta devuelve un usuario entonces modificalo
             Usuario usuario = respuesta.get();
             usuario.setNombre(nombre); // seteamos el nuevo dato
