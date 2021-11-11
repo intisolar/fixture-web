@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EquipoServicio {
     //Esto es una prueba GIT
-
+    
     @Autowired
     private EquipoRepositorio equipoRep;
     
