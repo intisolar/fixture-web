@@ -74,42 +74,92 @@ public class FixtureControlador {
     @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")   
     @PostMapping("/definir-cuartos")
     /*deben estar precargados los 4 partidos con goles para continuar*/
-    public String definirCuartos(HttpSession session, ModelMap model ,@RequestParam Integer golesPe1Eq1 ,@RequestParam Integer golesPe1Eq2,@RequestParam Integer golesPe2Eq1 ,@RequestParam Integer golesPe2Eq2 , @RequestParam Integer golesPe3Eq1 ,@RequestParam Integer golesPe3Eq2 , @RequestParam Integer golesPe4Eq1 ,@RequestParam Integer golesPe4Eq2) throws ErrorServicio {
+    public String definirCuartos(HttpSession session, ModelMap model ,@RequestParam(required =false) Integer golesPe1Eq1 ,@RequestParam(required =false) Integer golesPe1Eq2,@RequestParam(required =false) Integer golesPe2Eq1 ,@RequestParam(required =false) Integer golesPe2Eq2 , @RequestParam(required =false) Integer golesPe3Eq1 ,@RequestParam(required =false) Integer golesPe3Eq2 , @RequestParam(required =false) Integer golesPe4Eq1 ,@RequestParam(required =false) Integer golesPe4Eq2) throws ErrorServicio {
         /*Recupero la session del usuario logueado*/
         Usuario usuario = (Usuario) session.getAttribute("usuariosession");
         //Traer el fixture del usuario
         Fixture fixture = usuario.getFixture();
-        //Llamo a los 4 patidos de cuartos les pongo los goles y los guardo*/
-        
+        /*Llamo a los 4 patidos de cuartos les pongo los goles y los guardo, si 
+        es que estan completos y no hay empate*/
+        String msg =null;
+        try{
         PartidoEliminatorio pe1 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"1");
-        pe1.setGolesEquipo1(golesPe1Eq1);
-        pe1.setGolesEquipo2(golesPe1Eq2);
-        partidoEliminatorioRepositorio.save(pe1);
-            
+        
+        if(golesPe1Eq1 != golesPe1Eq2){
+            pe1.setGolesEquipo1(golesPe1Eq1);
+            pe1.setGolesEquipo2(golesPe1Eq2);
+            partidoEliminatorioRepositorio.save(pe1);
+        }else{msg = "No puede haber empate!";}
+        if(golesPe2Eq1 != golesPe2Eq2){
         PartidoEliminatorio pe2 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"2");
         pe2.setGolesEquipo1(golesPe2Eq1);
         pe2.setGolesEquipo2(golesPe2Eq2);
         partidoEliminatorioRepositorio.save(pe2);
-        
+        }else{msg = "No puede haber empate!";}
+        if(golesPe3Eq1 != golesPe3Eq2 ){
         PartidoEliminatorio pe3 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"3");
         pe3.setGolesEquipo1(golesPe3Eq1);
         pe3.setGolesEquipo2(golesPe3Eq2);
         partidoEliminatorioRepositorio.save(pe3);
-            
+        }else{msg = "No puede haber empate!";}
+        if(golesPe4Eq1 != golesPe4Eq2){
         PartidoEliminatorio pe4 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"4");
         pe4.setGolesEquipo1(golesPe4Eq1);
         pe4.setGolesEquipo2(golesPe4Eq2);
         partidoEliminatorioRepositorio.save(pe4);
+        }else{msg = "No puede haber empate!";}
+        }catch(ErrorServicio e){
+        msg = e.getMessage().toString();
         
-        
+        }
+        finally{
         
         //SdefinirPartidosCuartos();
-        return "redirect:/fixture";
+        return "redirect:/fixture?msg="+msg;}
         /* el controlador de la accion /fixture esta en PortalControlador*/
     }
     
+       //             ====    guardar formularios de los partidos de Semis   ====
+    @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")   
+    @PostMapping("/definir-semis") 
+    public String definirSemis(HttpSession session, ModelMap model ,@RequestParam(required = false) Integer golesSemi1Eq1 ,@RequestParam(required = false) Integer golesSemi1Eq2,@RequestParam(required = false) Integer golesSemi2Eq1 ,@RequestParam(required = false) Integer golesSemi2Eq2) throws ErrorServicio {
+        /*Recupero la session del usuario logueado*/
+        Usuario usuario = (Usuario) session.getAttribute("usuariosession");
+        //Traer el fixture del usuario
+        Fixture fixture = usuario.getFixture();
+        /*Llamo a los 2 patidos de cuartos les pongo los goles y los guardo, si 
+        es que estan completos y no hay empate*/
+        String msg =null;
+        try{
+        PartidoEliminatorio pe5 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"5");
+        
+        if(golesSemi1Eq1 != golesSemi1Eq2){
+            pe5.setGolesEquipo1(golesSemi1Eq1);
+            pe5.setGolesEquipo2(golesSemi1Eq2);
+            partidoEliminatorioRepositorio.save(pe5);
+        }else{msg = "No puede haber empate!";}
+        
+        if(golesSemi2Eq1 != golesSemi2Eq2){
+        PartidoEliminatorio pe6 = partidoEliminatorioServicio.traerPartido(fixture.getId(),"6");
+        pe6.setGolesEquipo1(golesSemi2Eq1);
+        pe6.setGolesEquipo2(golesSemi2Eq2);
+        partidoEliminatorioRepositorio.save(pe6);
+        }else{msg = "No puede haber empate!";}
+         }catch(ErrorServicio e){
+        msg = e.getMessage().toString();
+        
+        }
+        finally{
+        return "redirect:/fixture?msg="+msg;}
     
-    
+    }
+    //                         ====    guardar Formularios de Finales   ====
+    @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")   
+    @PostMapping("/definir-final") 
+    public String definirSemis(HttpSession session, ModelMap model ,@RequestParam(required = false) Integer finalGolesEq1 ,@RequestParam(required = false) Integer finalGolesEq2){
+        /*logica del ganador*/
+        
+        return "redirect:/fixture";}
     
     @GetMapping("/guardar")
     public String guardar(ModelMap model, @RequestParam Integer idPartido, @RequestParam String letraID, @RequestParam Integer goles1, @RequestParam Integer goles2, Integer complementario1, Integer complementario2, Integer penales1, Integer penales2) throws ErrorServicio {
