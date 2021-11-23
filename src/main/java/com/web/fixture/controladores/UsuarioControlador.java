@@ -1,5 +1,4 @@
 
-
 package com.web.fixture.controladores;
 
 import com.web.fixture.entidades.Usuario;
@@ -65,4 +64,3 @@ public class UsuarioControlador {
     }
     
 }
-
