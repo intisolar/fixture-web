@@ -1,3 +1,0 @@
-dropear y crear base de datos
-ejecutar sqls
-probar
