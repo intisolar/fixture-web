@@ -41,6 +41,8 @@ public class PartidoEliminatorio {
     private Integer golesComplementario2;
     private Integer penales1;
     private Integer penales2;
+    
+    private String letraID;
 
     /**
      * @return the idPartido
@@ -196,11 +198,24 @@ public class PartidoEliminatorio {
         this.penales2 = penales2;
     }
 
+    /**
+     * @return the letraID
+     */
+    public String getLetraID() {
+        return letraID;
+    }
+
+    /**
+     * @param letraID the letraID to set
+     */
+    public void setLetraID(String letraID) {
+        this.letraID = letraID;
+    }
+
     @Override
     public String toString() {
-        return "PartidoEliminatorio{" + "idPartido=" + idPartido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", fecha=" + fecha + ", golesEquipo1=" + golesEquipo1 + ", golesEquipo2=" + golesEquipo2 + ", fase=" + fase + ", golesComplementario1=" + golesComplementario1 + ", golesComplementario2=" + golesComplementario2 + ", penales1=" + penales1 + ", penales2=" + penales2 + '}';
+        return "PartidoEliminatorio{" + "idPartido=" + idPartido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", fecha=" + fecha + ", golesEquipo1=" + golesEquipo1 + ", golesEquipo2=" + golesEquipo2 + ", fase=" + fase + ", golesComplementario1=" + golesComplementario1 + ", golesComplementario2=" + golesComplementario2 + ", penales1=" + penales1 + ", penales2=" + penales2 + ", letraID=" + letraID + '}';
     }
-    
-    
 
+   
 }

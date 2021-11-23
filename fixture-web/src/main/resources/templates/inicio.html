@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+       
+        <title>Document</title>
+    </head>
+<body>
+
+    <header>
+        <nav class="nav-principal">
+            <img class="nav-1" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="Logo">
+
+            <div class="nav-2">
+            <h2 class="Titulo">FIFA WORLD CUP QATAR 2022</h2>
+
+
+            <ul class="menu">
+               
+                <li><a href="/fixture">Fixture</a></li>
+                <li><a href="/estadisticas">Estadisticas</a></li>
+                <li><a href="#">Noticias</a></li>
+            </ul>
+
+
+            </div>
+
+
+
+            <ul class="nav-3">
+                <li ><a href="/logout" class="nav3-li">Salir</a></li>
+               <li><a th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre}"></a></li>
+                <!-- dejarlo comentado por que tira error. --> 
+               <li><a th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.idUsuario}__)}">Editar Perfil</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="button-container">
+            <img class="img-principal" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="principal"/>
+            <button class="fixture-button"><a href="/fixture">¡Completa tu Fixture!</a></button>
+            
+        </div>
+
+
+    </main>
+
+    <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Cargando" data-fw-param="150949/"></script> <!-- end feedwind code --> 
+
+
+    <div class="second-content">
+        <div class="button-container">
+            <img class="img-principal2" src="assets/images/TablaPosiciones5.jpeg" alt="principal"/>
+            <h3 class="tabla-button">POSICIONES</h3>
+            
+        </div>
+
+
+    </div>
+
+    <footer class="titulares">
+        <div>
+            <img src="assets/images/phone (1).png" alt="" width="40px" height="40px">
+            <p> Contacto:</p>
+                <span>0800-555-334</span>
+        </div>
+    
+        <div>
+            <img src="assets/images/gmail.png" alt="" width="40px" height="40px">
+            <p>  Gmail:</p>
+            <span>infoFixture@gmail.com</span>
+        </div>
+    
+        <div>
+            <span><img src="assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
+        </div>
+    </footer>
+</body>
+</html>
