@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
+    <title> Fixture </title>
+
+</head>
+
+<body>
+    <header class="titulares header">
+        <div class="logo"> <img src="assets/images/FIFA World Cup Qatar 2022.svg" alt="" width="100px" height="100px"></div>
+        <div><h1 class="fixture-titulo">Fixture Qatar</h1></div>
+        <nav class="menu">
+            <ul>
+
+                <li class="nav-bar " ><a href="/inicio">Inicio</a></li>
+                <li class="nav-bar"><a href="/noticias">Noticias</a></li>
+                <li class="nav-bar"><a href="/fixture">Fixture</a></li>
+                <li class="nav-bar"><a href="/estadisticas">Estadisticas</a></li>
+
+                <li class="nav-bar"><a href="/login">Login</a></li>
+                <li class="nav-bar"><a href="/registro">Register</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+
+        <div class="container-calendario">
+            <h2>Calendario-Fase de Grupos <img src="assets/images/calendar-interface-symbol-tool.png" alt=""
+                    width="40px" height="40px"> </h1>
+                            <!--        vista de la fase de grupos             -->               
+                  <!--            ====    GRUPO A    ====                     -->        
+        <div class="Grupo-A">            
+            <p class="Grupos-P">Grupo A <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+            
+            
+            <div class="Partidos">     <!-- partidoGrupo id = 1--> 
+                <form action="/fixture/definir-partido?id=1" method="POST">
+                <input type="hidden" name ="id" th:value="1" >
+                
+                <p class="Horarios">18:00 - 16/11</p>
+                <!--equipo 1  -->
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Rusia
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                 <span class="Paises" style="font-weight: bold;">
+                     <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                 </span>
+                
+                <!--equipo 2  -->
+                <span class="Paises">
+                    <input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Arabia Saudita 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+                <button type="submit" class="btn-outline-secondary">Guardar</button>    
+            </form>
+            </div>
+    
+            <div class="Partidos">
+                <form action="/fixture/definir-partido?id=2" method="POST" id="2" >
+                <input type="hidden" name ="id" th:value="2" >    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px"> Egipto
+                        <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N"></span>
+                            <span class="Paises" style="font-weight: bold;">
+                                <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                            </span>
+                   <span class="Paises">
+                       <input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Uruguay 
+                       <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                   </span>
+            <button type="submit">Guardar</button>
+            </form>    
+            </div>
+            
+
+            
+            <div class="Partidos" id ="3">
+            <form action="/fixture/definir-partido?id=3" method="POST" id="3">
+                <input type="hidden" name ="id" th:value="3" >
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Rusia 
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises"><input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Egipto 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button>    
+            </form>                
+            </div>
+
+            
+            
+            <div class="Partidos" id="4">
+                <form action="/fixture/definir-partido?id=4" method="POST" id="p4" >
+                <input type="hidden" name ="id" th:value="4" >
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Arabia Saudita 
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Uruguay 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button>    
+            </form>    
+            </div>
+
+            
+            
+            <div class="Partidos">    
+            <form action="/fixture/definir-partido?id=5" method="POST" id="5" >
+                <input type="hidden" name ="id" th:value="5" >
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Rusia 
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number"name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Uruguay 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button>    
+            </form>                 
+            </div>        
+            
+        <div class="Partidos">
+            <form action="/fixture/definir-partido?id=6" method="POST">
+                <input type="hidden" name ="id" th:value="6" >
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25" height="25">Arabia Saudita 
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> Egipto 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+        <button type="submit">Guardar</button>
+        </form>                
+            </div>
+            
+        </div>
+
+
+<!--                                         ====    GRUPO B    ====                        -->
+        <div class="Grupo-B">
+        
+            <p class="Grupos-P">Grupo-B 
+                <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+            
+            <div class="Partidos">
+            <form action="/fixture/definir-partido?id=7" method="POST" id="p7" > 
+                 <input type="hidden" name ="id" th:value="7" >                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Portugal 
+                    <input type="number" name="golesEquipo1" th:value="${golesEquipo1}" min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="golesEquipo2" th:value="${golesEquipo2}" min="0" max="9" class="Input-N"> España
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button>    
+            </form>    
+            </div>
+            
+            
+            
+            <div class="Partidos">
+            <form action="/definir-partido-8" method="POST" id="p8" >    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Marruecos 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Irán 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                  
+            </div>
+   
+
+                
+            <div class="Partidos" id="9">
+            <form action="/definir-partido-9" method="POST" id="p9" >    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Portugal 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Marruecos
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                   
+            </div>
+
+
+            <div class="Partidos">
+            <form action="/definir-partido-10" method="POST" id="p10" >    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">España
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Irán 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                 
+            </div>
+            
+            <div class="Partidos">
+            <form action="/definir-partido-11" method="POST" id="p11" >    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Portugal 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Irán
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>     
+            </div>
+            
+            <div class="Partidos">
+            <form action="/definir-partido-12" method="POST" id="p12"> 
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">España 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Marruecos
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>     
+            </div>
+            
+
+        </div>
+
+<!--                           ====    GRUPO C    ====                           -->
+
+       <div class="Grupo-C">
+            <p class="Grupos-P">Grupo C <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+            
+            
+            <div class="Partidos">
+            <form action="/definir-partido-13" method="POST" id="p13">     
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Francia 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Australia 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>
+            </div>
+            
+            
+            <div class="Partidos">
+            <form action="/definir-partido-14" method="POST" id="p14">    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Perú
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Dinamarca 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                
+            </div>
+
+            <div class="Partidos">
+            <form action="/definir-partido-15" method="POST" id="p15">    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Francia 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Perú 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                
+            </div>
+            
+            
+            <div class="Partidos">
+            <form action="/definir-partido-16" method="POST" id="p16">    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Australia
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises"><input type="number" name="" id=""min="0" max="9" class="Input-N"> Dinamarca 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                
+            </div>
+
+            <div class="Partidos">
+            <form action="/definir-partido-17" method="POST" id="p17">    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Francia 
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Dinamarca 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>
+            <button type="submit">Guardar</button> 
+            </form>                
+            </div>
+            
+            
+            <div class="Partidos">
+            <form action="/definir-partido-18" method="POST" id="p18">    
+                <p class="Horarios">18:00 - 16/11</p>
+                <span class="Paises">
+                    <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Australia
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                </span>
+                    
+                <span class="Paises" style="font-weight: bold;">
+                    <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                </span>
+                    
+                <span class="Paises">
+                    <input type="number" name="" id=""min="0" max="9" class="Input-N"> Perú 
+                    <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                </span>    
+            <button type="submit">Guardar</button>
+            </form>    
+            </div>
+
+      </div>
+<!--                               ====    GRUPO D    ====                        -->
+       <div class="Grupo-D">
+                <p class="Grupos-P">Grupo D <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+                
+                <div class="Partidos">
+                <form action="/definir-partido-19" method="POST" id="p19">    
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Argentina 
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N"> Islandia 
+                        <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>                    
+                </div>
+
+                <div class="Partidos">
+                <form action="/definir-partido-20" method="POST" id="p20">
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Croacia 
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N"> Nigeria 
+                        <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>     
+                </div>
+
+                <div class="Partidos">
+                <form action="/definir-partido-21" method="POST" id="p21">
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Argentina 
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N"> Nigeria
+                        <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>     
+                </div>
+                
+                <div class="Partidos" id="22">
+                <form action="/definir-partido-22" method="POST" id="p22">
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Islandia 
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N"> Croacia 
+                        <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>                     
+                </div>
+
+
+                <div class="Partidos">
+                <form action="/definir-partido-23" method="POST" id="p23">    
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px"> Argentina
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                       <input type="number" name="" id=""min="0" max="9" class="Input-N">  Croacia
+                       <img src="assets/images/nigeria.png" alt="" width="25px" height="25px"> 
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>                     
+                </div>
+                
+                <div class="Partidos">
+                <form action="/definir-partido-24" method="POST" id="p24">    
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises">
+                        <img src="assets/images/argentina.png" alt="" width="25px" height="25px">Islandia 
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N">
+                    </span>
+                        
+                    <span class="Paises" style="font-weight: bold;">
+                        <img src="assets/images/vs.png" alt="" width="60px" height="60px">
+                    </span>
+                        
+                    <span class="Paises">
+                        <input type="number" name="" id=""min="0" max="9" class="Input-N"> Nigeria 
+                        <img src="assets/images/nigeria.png" alt="" width="25px" height="25px">
+                    </span>
+                <button type="submit">Guardar</button>
+                </form>                     
+                </div>
+
+        </div>
+        
+        
+<!-- ========================================================================= -->        
+<!-- =======================    FASE ELIMINATORIA    ==========================-->
+<!-- ========================================================================= -->
+        
+           <h2>Calendario-Fase Eliminatoria <img src="assets/images/calendar-interface-symbol-tool.png" alt=""
+            width="40px" height="40px"> </h4>
+
+            <div class="Cuartos">
+            <form action="/definir-cuartos" method="POST" id="c1">   
+                    <p class="Cuartos-P">Cuartos <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+                <div class="Partidos">
+                    
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+
+                    <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                         
+                    <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+
+                </div>
+    
+                <div class="Partidos">                   
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+
+                    <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                         
+                    <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+                </div>
+    
+    
+    
+                <div class="Partidos">
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+
+                    <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                         
+                    <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+                </div>
+    
+    
+                <div class="Partidos">
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+
+                    <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                         
+                    <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+                </div>
+            <button type="submit">Guardar</button>
+            </form>        
+            </div>
+
+            <div class="Semis">
+                <form action="/definir-semis" method="POST" id="semis">
+                    <p class="Semis-P">Semis <img src="assets/images/football.png" alt="" width="30px" height="30px" ></p>
+                    <div class="Partidos">
+                        <p class="Horarios">18:00 - 16/11</p>
+                        <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+    
+                        <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                             
+                        <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+                    </div>
+
+                    <div class="Partidos">
+                        <p class="Horarios">18:00 - 16/11</p>
+                        <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+    
+                        <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                             
+                        <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+                    </div>
+            <button type="submit">Guardar</button>
+            </form>                    
+            </div>
+
+
+            <div class="Final">
+             
+            <form action="/definir-final" method="POST" id="final">      
+                <p class="Final-P">Final <img src="assets/images/world-cup (1).png" alt="" width="30px" height="30px" ></p>
+    
+                <div class="Partidos">
+                    
+                    <p class="Horarios">18:00 - 16/11</p>
+                    <span class="Paises"> <input type="text" name="" id=""class="Input-T"> <input type="number" name="" id=""min="0" max="9"class="Input-N"></span>
+
+                    <span class="Paises" style="font-weight: bold;"><img src="assets/images/vs.png" alt="" width="60px" height="60px"></span>
+                         
+                    <span class="Paises"> <input type="number" name="" id=""min="0" max="9"class="Input-N">  <input type="text" name="" id=""class="Input-T"></span>
+
+                </div>
+            <button type="submit">Guardar</button>
+            </form>  
+            </div> 
+        </div>
+  
+    </main>
+    <footer class="titulares">
+        <div>
+            <img src="assets/images/phone (1).png" alt="" width="40px" height="40px">
+            <p> Contacto:</p>
+                <span>0800-555-334</span>
+        </div>
+
+        <div>
+            <img src="assets/images/gmail.png" alt="" width="40px" height="40px">
+            <p>  Gmail:</p>
+            <span>infoFixture@gmail.com</span>
+        </div>
+
+        <div>
+            <span><img src="assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
+        </div>
+    </footer>
+</body>
+</html>
