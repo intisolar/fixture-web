@@ -18,7 +18,7 @@ public class UsuarioControlador {
     
     @Autowired
     private UsuarioServicio usuarioServicio;
-    
+    //Esto es una prueba git
     @PreAuthorize("hasAnyRole('ROLE_USUARIO_REGISTRADO')")
     @GetMapping("/editar-perfil")
     public String editarPerfil(@RequestParam String id, ModelMap model){
