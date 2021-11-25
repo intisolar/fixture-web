@@ -1,9 +1,6 @@
 
 package com.web.fixture.controladores;
 
-import com.web.fixture.entidades.Fixture;
-import com.web.fixture.entidades.PartidoGrupo;
-import com.web.fixture.entidades.Usuario;
 import com.web.fixture.errores.ErrorServicio;
 import com.web.fixture.repositorios.PartidoEliminatorioRepositorio;
 import com.web.fixture.repositorios.PartidoGrupoRepositorio;
@@ -11,7 +8,6 @@ import com.web.fixture.servicios.FixtureServicio;
 import com.web.fixture.servicios.PartidoEliminatorioServicio;
 import com.web.fixture.servicios.PartidoGrupoServicio;
 import com.web.fixture.servicios.UsuarioServicio;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -101,39 +97,19 @@ public class PortalControlador {
     //EL FIXTURE SOLO PODRA INGRESAR UN USUARIO LOGUEADO.
     @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")
     @GetMapping("/fixture")
-   public String fixture(ModelMap model , HttpSession session) throws ErrorServicio {
-	Usuario usuario = (Usuario) session.getAttribute("usuariosession");
-        if(usuario != null){
-            Fixture fixture = usuario.getFixture();
-            String goles1="";
-            String goles2="";
-            for (Integer i = 1; i <= 24; i++) {
-                PartidoGrupo partido = partidoGrupoServicio.traerPartido(fixture.getId() ,i.toString());
-                System.out.println("partido " + partido.getTag());
-                
-                goles1 ="golesEquipo1_" + i;
-                goles2 ="golesEquipo2_" + i;
-                System.out.println(goles1 + "  ||  " + goles2);
-                if(partido.getGolesEquipo1()!=null && partido.getGolesEquipo2() !=null){
-                    model.put(goles1 ,partido.getGolesEquipo1());
-                    model.put(goles2 , partido.getGolesEquipo2());
-                }
-            }
-            //mejorar vista
-            
-            return "fixture.html";
-        }else{
-            return "redirect:/logout";}
+    public String fixture() {
+		
+        return "fixture.html";
     }
     
 //     A ESTADISTICAS SOLO PODRA INGRESAR UN USUARIO LOGUEADO, DEBIDO QUE LAS MISMAS SE CREAN EN BASE AL FIXTURE COMPLETADO
-//    @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")
-//    @GetMapping("/estadisticas")
-//    public String estadisticas() {
-//		
-//        return "estadisticas.html";
-//    }
-//  
+    @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")
+    @GetMapping("/estadisticas")
+    public String estadisticas() {
+		
+        return "estadisticas.html";
+    }
+  
 
     
     @PreAuthorize("hasAnyRole('ROLE_USUARIO_AUTORIZADO')")

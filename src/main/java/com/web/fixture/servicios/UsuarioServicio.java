@@ -58,13 +58,15 @@ public class UsuarioServicio implements UserDetailsService {
         String encriptada = new BCryptPasswordEncoder().encode(clave);
         usuario.setClave(encriptada);
         usuario.setAlta(new Date()); 
-        String idUsuario = usuario.getIdUsuario();
+
         Foto foto = fotoServicio.guardar(archivo);
         usuario.setFoto(foto);
-        usuario.setFixture(fixtureServicio.creaFixture(idUsuario));
-       // usuarioRepositorio.save(usuario); //Le decimos al repositorio que lo guarde en la base de datos. El repositorio es el encargado de transformar ese objeto en una o más tablas de la base de datos
+
        
-        
+ 
+       // usuarioRepositorio.save(usuario); //Le decimos al repositorio que lo guarde en la base de datos. El repositorio es el encargado de transformar ese objeto en una o más tablas de la base de datos
+    
+        usuario.setFixture(fixtureServicio.creaFixture());
         usuarioRepositorio.save(usuario);
     }
     

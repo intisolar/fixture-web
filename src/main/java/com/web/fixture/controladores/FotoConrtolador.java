@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 @RequestMapping("/foto")
-public class FotoControlador {
+public class FotoConrtolador {
     @Autowired
     private UsuarioServicio usuarioServicio;
             
@@ -49,7 +49,7 @@ public class FotoControlador {
             return new ResponseEntity<>(foto,headers,HttpStatus.OK );
             
         } catch (ErrorServicio ex) {
-            Logger.getLogger(FotoControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FotoConrtolador.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND );
         }
     
