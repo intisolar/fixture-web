@@ -7,44 +7,26 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 @Entity
 public class CalendarioEliminatorio {
-
- //Tabla estatica que se arma con el archivo Partidos eliminatorios.sql
- // se ingresa la info de las fechas, se deja el blanco los equipos etc   
     @Id
     private Integer idPartido;
-    
+
     private String fase;
-    
+
     private String tag;
 
     @ManyToOne
-    private Equipo equipo1;
-
-    @ManyToOne
-    private Equipo equipo2;
-
+    private ListaEquipos equipo1;
     
+    @ManyToOne
+    private ListaEquipos equipo2;
+
     @Temporal(TemporalType.DATE)
     private Date fecha;
 
-//  Constructors
-
-    public CalendarioEliminatorio() {
-    }
-
-    public CalendarioEliminatorio(Integer idPartido, String fase, String tag, Equipo equipo1, Equipo equipo2, Date fecha) {
-        this.idPartido = idPartido;
-        this.fase = fase;
-        this.tag = tag;
-        this.equipo1 = equipo1;
-        this.equipo2 = equipo2;
-        this.fecha = fecha;
-    }
-   
-// getters
+    
+// Getters
     public Integer getIdPartido() {
         return idPartido;
     }
@@ -57,11 +39,11 @@ public class CalendarioEliminatorio {
         return tag;
     }
 
-    public Equipo getEquipo1() {
+    public ListaEquipos getEquipo1() {
         return equipo1;
     }
 
-    public Equipo getEquipo2() {
+    public ListaEquipos getEquipo2() {
         return equipo2;
     }
 
@@ -70,7 +52,6 @@ public class CalendarioEliminatorio {
     }
 
 //  Setters
-    
     public void setIdPartido(Integer idPartido) {
         this.idPartido = idPartido;
     }
@@ -83,11 +64,11 @@ public class CalendarioEliminatorio {
         this.tag = tag;
     }
 
-    public void setEquipo1(Equipo equipo1) {
+    public void setEquipo1(ListaEquipos equipo1) {
         this.equipo1 = equipo1;
     }
 
-    public void setEquipo2(Equipo equipo2) {
+    public void setEquipo2(ListaEquipos equipo2) {
         this.equipo2 = equipo2;
     }
 
@@ -95,7 +76,5 @@ public class CalendarioEliminatorio {
         this.fecha = fecha;
     }
 
-
+  
 }
-
-
