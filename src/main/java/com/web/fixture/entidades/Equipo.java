@@ -1,6 +1,3 @@
-/*clase que sirve para guardar la info de los equipos, luego cada fizture posee }
-una lista propia de equipos con sus puntajes etc*/
-
 package com.web.fixture.entidades;
 
 import java.util.Date;
@@ -12,6 +9,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Equipo {
+
 
     @Id
     @GeneratedValue
@@ -25,107 +23,135 @@ public class Equipo {
     private Integer puntaje;
     private Integer golesFavor;
     private Integer golesContra;
-    
-    // Este numero coincide con el id de los equipos listados
-    
-    private Integer numeroEquipo;
-    
+//    private Integer diferenciaGoles;
+
     private String fase;
     private String grupo;
 
-//  Constructores
 
-    public Equipo() {
-    }
-
-    public Equipo(String pais, String grupo, String fixtureId) {
-        this.pais = pais;
-        this.grupo = grupo;
-    }
-    
-    
-    
-    //Getters
+    /**
+     * @return the idEquipo
+     */
     public Integer getIdEquipo() {
         return idEquipo;
     }
 
-
-    public String getPais() {
-        return pais;
-    }
-
-    public Date getBaja() {
-        return baja;
-    }
-
-    public Integer getPuntaje() {
-        return puntaje;
-    }
-
-    public Integer getGolesFavor() {
-        return golesFavor;
-    }
-
-    public Integer getGolesContra() {
-        return golesContra;
-    }
-    
-    public Integer getNumeroEquipo(){
-        return numeroEquipo;
-    }
-    
-    public String getFase() {
-        return fase;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    // Setters
+    /**
+     * @param idEquipo the idEquipo to set
+     */
     public void setIdEquipo(Integer idEquipo) {
         this.idEquipo = idEquipo;
     }
 
+    /**
+     * @return the pais
+     */
+    public String getPais() {
+        return pais;
+    }
+
+    /**
+     * @param pais the pais to set
+     */
     public void setPais(String pais) {
         this.pais = pais;
     }
 
+    /**
+     * @return the baja
+     */
+    public Date getBaja() {
+        return baja;
+    }
+
+    /**
+     * @param baja the baja to set
+     */
     public void setBaja(Date baja) {
         this.baja = baja;
     }
 
+    /**
+     * @return the puntaje
+     */
+    public Integer getPuntaje() {
+        return puntaje;
+    }
+
+    /**
+     * @param puntaje the puntaje to set
+     */
     public void setPuntaje(Integer puntaje) {
         this.puntaje = puntaje;
     }
 
+    /**
+     * @return the golesFavor
+     */
+    public Integer getGolesFavor() {
+        return golesFavor;
+    }
+
+    /**
+     * @param golesFavor the golesFavor to set
+     */
     public void setGolesFavor(Integer golesFavor) {
         this.golesFavor = golesFavor;
     }
 
+    /**
+     * @return the golesContra
+     */
+    public Integer getGolesContra() {
+        return golesContra;
+    }
+
+    /**
+     * @param golesContra the golesContra to set
+     */
     public void setGolesContra(Integer golesContra) {
         this.golesContra = golesContra;
     }
 
-    public void setNumeroEquipo(Integer numeroEquipo){
-        this.numeroEquipo = numeroEquipo;
+//    /**
+//     * @return the diferenciaGoles
+//     */
+//    public Integer getDiferenciaGoles() {
+//        return diferenciaGoles;
+//    }
+//
+//    /**
+//     * @param diferenciaGoles the diferenciaGoles to set
+//     */
+//    public void setDiferenciaGoles(Integer diferenciaGoles) {
+//        this.diferenciaGoles = diferenciaGoles;
+//    }
+
+    /**
+     * @return the fase
+     */
+    public String getFase() {
+        return fase;
     }
-    
+
+    /**
+     * @param fase the fase to set
+     */
     public void setFase(String fase) {
         this.fase = fase;
     }
+    
+    /**
+     * @return the grupo
+     */
+    public String getGrupo() {
+        return grupo;
+    }
 
+    /**
+     * @param grupo the grupo to set
+     */
     public void setGrupo(String grupo) {
         this.grupo = grupo;
     }
-
-    @Override
-    public String toString() {
-        return "Equipo{" + "idEquipo=" + idEquipo + ", puntaje=" + puntaje + ", golesFavor=" + golesFavor + ", golesContra=" + golesContra + ", numeroEquipo=" + numeroEquipo + '}';
-    }
-
-
-
-   
 }
