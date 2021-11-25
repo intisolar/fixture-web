@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../static/assets/styles.css" />
+        <link rel="stylesheet" href="assets/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
 
     <header>
         <nav class="nav-principal">
-            <img class="nav-1" src="../static/assets/images/FIFA World Cup Qatar 2022.svg" alt="Logo">
+            <img class="nav-1" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="Logo">
 
             <div class="nav-2">
             <h2 class="Titulo">FIFA WORLD CUP QATAR 2022</h2>
@@ -24,9 +24,9 @@
 
             <ul class="menu">
                
-                <li><a href="fixture.html">Fixture</a></li>
-                <li><a href="estadisticas.html">Estadisticas</a></li>
-                <li><a href="Noticias.html">Noticias</a></li>
+                <li><a href="/fixture">Fixture</a></li>
+                <li><a href="/estadisticas">Estadisticas</a></li>
+                <li><a href="#">Noticias</a></li>
             </ul>
 
 
@@ -35,21 +35,18 @@
 
 
             <ul class="nav-3">
-               
-
-
-                    <li ><a href="/logout" class="nav3-li">Salir</a></li>
-               <li><a th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre}" class="nav3-li"></a></li>
+                <li ><a href="/logout" class="nav3-li">Salir</a></li>
+               <li><a th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre}"></a></li>
                 <!-- dejarlo comentado por que tira error. --> 
-               <li><a th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.idUsuario}__)}" class="nav3-li">Editar Perfil</a></li> 
+               <li><a th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.idUsuario}__)}">Editar Perfil</a></li> 
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
         <div class="button-container">
-            <img class="img-principal" src="../static/assets/images/FIFA World Cup Qatar 2022.svg" alt="principal"/>
-            <button class="fixture-button"><a href="fixture.html">¡Completa tu Fixture!</a></button>
+            <img class="img-principal" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="principal"/>
+            <button class="fixture-button"><a href="/fixture">¡Completa tu Fixture!</a></button>
             
         </div>
 
@@ -61,33 +58,30 @@
 
     <div class="second-content">
         <div class="button-container">
-            <img class="img-principal2" src="../static/assets/images/TablaPosiciones5.jpeg" alt="principal"/>
-            <a href="estadisticas.html" class="tabla-button" style="color: black;">POSICIONES</a>
+            <img class="img-principal2" src="assets/images/TablaPosiciones5.jpeg" alt="principal"/>
+            <h3 class="tabla-button">POSICIONES</h3>
             
         </div>
 
 
     </div>
 
-
-    </div>
-
     <footer class="titulares">
         <div>
-            <img src="../static/assets/images/phone (1).png" alt="" width="40px" height="40px">
+            <img src="assets/images/phone (1).png" alt="" width="40px" height="40px">
             <p> Contacto:</p>
                 <span>0800-555-334</span>
         </div>
-      
+    
         <div>
-            <img src="../static/assets/images/gmail.png" alt="" width="40px" height="40px">
+            <img src="assets/images/gmail.png" alt="" width="40px" height="40px">
             <p>  Gmail:</p>
             <span>infoFixture@gmail.com</span>
         </div>
-      
+    
         <div>
-            <span><img src="../static/assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
+            <span><img src="assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>

@@ -7,79 +7,101 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderColumn;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Fixture{
+public class Fixture {
+
+  
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-    
-   @OneToMany
-   (cascade = {CascadeType.ALL})
+    @OneToMany
+    (cascade = {CascadeType.ALL})
     private List<PartidoGrupo> listaPartidosGrupos;
-   
    @OneToMany
    (cascade = {CascadeType.ALL})
-   private List<PartidoEliminatorio> listaPartidosEliminatorio;
-   
-   @OneToMany
-   (cascade = {CascadeType.ALL})
-   private List<Equipo> listaEquipos;
+    private List<PartidoEliminatorio> listaPartidosEliminatorio;
     
     //Faltan listas de partidos de fase eliminatoria y faltaría elegir un ganador.
     
     @OneToOne
     private Equipo ganador;
-    
-    
-//   ===========================================================================
-//Constructores
-    public Fixture() {
-    }
-    
-//  Getters
+
+
+
+
+
+
+
+
+
+
+// metodos
+    /**
+     * @return the id
+     */
     public String getId() {
         return id;
     }
 
-    public List<PartidoGrupo> getListaPartidosGrupos() {
-        return listaPartidosGrupos;
-    }
-
-    public List<PartidoEliminatorio> getListaPartidosEliminatorio() {
-        return listaPartidosEliminatorio;
-    }
-
-    public List<Equipo> getListaEquipos() {
-        return listaEquipos;
-    }
-
-    public Equipo getGanador() {
-        return ganador;
-    }
-
-//  Setters    
+    /**
+     * @param id the id to set
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+
+    /**
+     * @return the listaPartidosGrupos
+     */
+    public List<PartidoGrupo> getListaPartidosGrupos() {
+        return listaPartidosGrupos;
+    }
+
+    /**
+     * @param listaPartidosGrupos the listaPartidosGrupos to set
+     */
     public void setListaPartidosGrupos(List<PartidoGrupo> listaPartidosGrupos) {
         this.listaPartidosGrupos = listaPartidosGrupos;
     }
 
+    /**
+     * @return the listaPartidosEliminatorio
+     */
+    public List<PartidoEliminatorio> getListaPartidosEliminatorio() {
+        return listaPartidosEliminatorio;
+    }
+
+    /**
+     * @param listaPartidosEliminatorio the listaPartidosEliminatorio to set
+     */
     public void setListaPartidosEliminatorio(List<PartidoEliminatorio> listaPartidosEliminatorio) {
         this.listaPartidosEliminatorio = listaPartidosEliminatorio;
     }
 
-    public void setListaEquipos(List<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
+    /**
+     * @return the ganador
+     */
+    public Equipo getGanador() {
+        return ganador;
     }
 
+    /**
+     * @param ganador the ganador to set
+     */
     public void setGanador(Equipo ganador) {
         this.ganador = ganador;
     }
-   
+
+    @Override
+    public String toString() {
+        return "Fixture{" + "id=" + id + ", listaPartidosGrupos=" + listaPartidosGrupos + ", listaPartidosEliminatorio=" + listaPartidosEliminatorio + ", ganador=" + ganador + '}';
+    }
+
+    
 }
