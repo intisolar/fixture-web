@@ -66,6 +66,7 @@ body {
   
     li a{
         text-decoration: none;
+        color:white
       }
       a:visited{
         text-decoration:none;
@@ -138,6 +139,7 @@ body {
       }
       .fixture-button a{
           text-decoration: none;
+          color:white;
       }
       .fixture-button:hover{
           font-size: 2.6rem;
@@ -150,10 +152,10 @@ body {
       }
       .tabla-button{
         position: absolute;
+        text-decoration: none;
         
+        color: black;
         border-bottom: 2px solid black;
-      
-      
         font-size: 7.5rem;
       
     }
