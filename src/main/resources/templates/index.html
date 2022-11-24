@@ -16,7 +16,7 @@
 
     <header>
         <nav class="nav-principal">
-            <img class="nav-1" src="../assets/images/FIFA World Cup Qatar 2022.svg" alt="Logo">
+            <img class="nav-1" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="Logo">
 
             <div class="nav-2">
             <h2 class="Titulo">FIFA WORLD CUP QATAR 2022</h2>
@@ -24,9 +24,9 @@
 
             <ul class="menu">
                
-                <li><a href="login.html">Fixture</a></li>
-                <li><a href="estadisticas.html">Estadisticas</a></li>
-                <li><a href="Noticias.html">Noticias</a></li>
+                <li><a href="/login">Fixture</a></li>
+                <li><a href="/login">Estadisticas</a></li>
+                <li><a href="/noticias">Noticias</a></li>
             </ul>
 
 
@@ -38,18 +38,17 @@
                
 
 
-                <li ><a href="login.html" class="nav3-li">Login</a></li>
-                <li ><a href="registro.html" class="nav3-li">Registro</a></li>
-                <li ><p th:if="${titulo != null}" th:text="${titulo}" style="color:black" class="nav3-li"></p></li>
-                <li ><p th:if="${descripcion != null}" th:text="${descripcion}" style="color:black" class="nav3-li"></p> </li>
+                <li ><a href="/login" class="nav3-li">Login</a></li>
+                <li ><a href="/registro" class="nav3-li">Registro</a></li>
+                <li ><p th:if="${descripcion != null}" th:text="${descripcion}" style="color:white" class="nav3-li"></p> </li>
             </ul>
         </nav>
     </header>
 
     <main class="main-content">
         <div class="button-container">
-            <img class="img-principal" src="../assets/images/FIFA World Cup Qatar 2022.svg" alt="principal"/>
-            <button class="fixture-button"><a href="fixture.html">¡Completa tu Fixture!</a></button>
+            <img class="img-principal" src="assets/images/FIFA World Cup Qatar 2022.svg" alt="principal"/>
+            <button class="fixture-button"><a href="/login">¡Completa tu Fixture!</a></button>
             
         </div>
 
@@ -61,8 +60,8 @@
 
     <div class="second-content">
         <div class="button-container">
-            <img class="img-principal2" src="../assets/images/TablaPosiciones5.jpeg" alt="principal"/>
-            <a href="estadisticas.html" class="tabla-button" style="color: black;">POSICIONES</a>
+            <img class="img-principal2" src="assets/images/TablaPosiciones5.jpeg" alt="principal"/>
+            <a href="/login" class="tabla-button" style="color: black;">POSICIONES</a>
             
         </div>
 
@@ -71,20 +70,20 @@
 
     <footer class="titulares">
         <div>
-            <img src="../assets/images/phone (1).png" alt="" width="40px" height="40px">
+            <img src="assets/images/phone (1).png" alt="" width="40px" height="40px">
             <p> Contacto:</p>
                 <span>0800-555-334</span>
         </div>
-      
+
         <div>
-            <img src="../assets/images/gmail.png" alt="" width="40px" height="40px">
+            <img src="assets/images/gmail.png" alt="" width="40px" height="40px">
             <p>  Gmail:</p>
             <span>infoFixture@gmail.com</span>
         </div>
-      
+
         <div>
-            <span><img src="../assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
+            <span><img src="assets/images/copyright (1).png" alt="" width="40px" height="40px">All Rights Reserved</span>
         </div>
-      </footer>
+    </footer>
 </body>
 </html>
