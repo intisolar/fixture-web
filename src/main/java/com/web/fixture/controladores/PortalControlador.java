@@ -62,7 +62,7 @@ public class PortalControlador {
     @GetMapping("/noticias")
     public String verNoticias() {
 		
-        return "Noticias.html";
+        return "noticias.html";
     }
     
     @GetMapping("/login")
