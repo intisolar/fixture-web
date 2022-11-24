@@ -424,6 +424,7 @@
         flex-basis: 20%;
         flex-grow: 1;
         flex-shrink: 2;
+        padding: 10px;
     }
     .Register-Form-F{
         display: flex;
@@ -466,6 +467,7 @@
         border: 2px solid black;
         color: white;
         width: 30vh;
+        border-radius: 5px;
 
     }
     .Log-Link{
@@ -476,7 +478,7 @@
         -webkit-border-radius: 25px;
         -moz-border-radius: 25px;
         border-radius: 25px;
-
+        padding: 10px;
         background-color: white;
         margin-bottom: 5vh;
         width: 40vh;
@@ -1172,6 +1174,7 @@
         background-size:100vh;
         background-repeat: no-repeat;
         min-height: 60vh;
+
 
 
     }
