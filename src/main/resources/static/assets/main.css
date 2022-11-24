@@ -431,7 +431,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+padding: 10px;
         flex-grow: 1;
         flex-shrink: 2;
     }
@@ -444,19 +444,20 @@
     .Register-P{
 
         font-family: 'Kanit', sans-serif;
-        font-size: 32px;
+        font-size: 20px;
         text-align: center;
         flex-grow: 1;
         flex-shrink: 2;
     }
     .Register-I{
         font-family: 'Kanit', sans-serif;
-        width: 240px;
+        width: 100%;
         height: 30px;
         margin-left: 10px;
         flex-grow: 1;
         flex-shrink: 2;
-
+        margin: 5px;
+        padding: 5px;
     }
     .Register-B{
         height: 35px;
@@ -464,7 +465,7 @@
         width: 50px;
         margin: 1vh;
         background-color: crimson;
-        border: 2px solid black;
+        border: 2px solid #b72d2d;
         color: white;
         width: 30vh;
         border-radius: 5px;
@@ -1018,7 +1019,7 @@
 
     }    
     .Register-Form{
-
+padding: 10px;
         margin-top: 5vh;
         margin-bottom: 5vh;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;      
@@ -1036,14 +1037,15 @@
     .Register-P{
 
         font-family: 'Kanit', sans-serif;
-        font-size: 3.5vh;
+        font-size: 3vh;
         text-align: center;
     }
     .Register-I{
         font-family: 'Kanit', sans-serif;
-        width: 250px;
+        width: 90%;
         height: 30px;
-        margin-left: 10px;
+        margin: 5px;
+        padding: 5px;
 
     }
     .Register-B{
@@ -1052,9 +1054,9 @@
         width: 80px;
         margin: 1vh;
         background-color: crimson;
-        border: 2px solid black;
+        border: 2px solid #b72d2d;
         color: white;
-
+border-radius: 5px;
     }
     .Log-Link{
         display: flex;
@@ -1066,6 +1068,7 @@
         border-radius: 25px;
         min-width: 420px;
         background-color: white;
+        padding: 10px;
     }
 
     button a{
