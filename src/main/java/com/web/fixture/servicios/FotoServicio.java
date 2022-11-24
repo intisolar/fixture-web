@@ -28,8 +28,9 @@ public class FotoServicio {
                 foto.setMime(archivo.getContentType());
                 foto.setNombre(archivo.getName());
                 foto.setContenido(archivo.getBytes());
-
+            System.out.println(foto.toString());
                 return fotoRep.save(foto);
+                
             } catch (Exception e) {
                 System.out.println("////////////////////////");
                 System.out.println("////////////////////////");
